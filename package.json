@@ -15,6 +15,6 @@
     "coffeescript": "^2.7.0"
   },
   "dependencies": {
-    "coffee_plus": "^0.0.39"
+    "coffee_plus": "^0.0.41"
   }
 }
