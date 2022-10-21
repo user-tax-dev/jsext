@@ -3,13 +3,8 @@
   "repository": "https://github.com/user-tax-dev/jsext.git",
   "type": "module",
   "license": "Apache-2.0",
-  "files": [
-    "lib/*"
-  ],
+  "files": ["*.js"],
   "version": "0.0.14",
-  "scripts": {
-    "build": "cep -o lib -c src"
-  },
   "exports": {
     ".": "./index.js",
     "./*": "./*"

@@ -16,6 +16,7 @@ version=$(cat package.json | jq -r '.version')
 git add -u || true
 git commit -m. || true
 nr build
+cp readme.md lib
 cp package.dist.json lib/package.json
 cd lib
 npm set unsafe-perm true
