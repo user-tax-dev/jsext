@@ -1,6 +1,6 @@
 JS_SUFFIX = '.js'
 
-BUILDIN = new Set ['fs','stream']
+BUILDIN = new Set ['fs','stream','zx']
 
 export default (specifier,cx)=>
   if specifier.includes ':'
