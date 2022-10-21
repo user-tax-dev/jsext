@@ -1,9 +1,9 @@
-<!-- EDIT /Users/z/user/node-loader/readme.md -->
+<!-- EDIT /Users/z/user/jsext/readme.md -->
 
 nodejs loader for coffeescript
 
 ```
-ni -D @iuser/node-loader
+ni -D @iuser/jsext
 ```
 
 [→ test.sh](test.sh)
@@ -17,7 +17,7 @@ set -ex
 
 bun run build
 
-filepath=./test/test.coffee
+filepath=./test/test.js
 
 exec node \
   --trace-uncaught \
@@ -28,30 +28,6 @@ exec node \
 ```
 
 
-[→ test/test.coffee](test/test.coffee)
+> ./test/test.coffee
 
-```coffee
-#!/usr/bin/env coffee
-
-> ./import:x
-  utax/split
-
-+ a
-
-a = 1
-
-console.log a
-
-
-console.log x
-```
-
-
-[→ test/import.coffee](test/import.coffee)
-
-```coffee
-#!/usr/bin/env coffee
-
-export default 2
-```
-
+> ./test/import.coffee

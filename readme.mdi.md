@@ -1,7 +1,7 @@
 nodejs loader for coffeescript
 
 ```
-ni -D @iuser/node-loader
+ni -D @iuser/jsext
 ```
 
 > ./test.sh

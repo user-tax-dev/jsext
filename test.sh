@@ -6,7 +6,7 @@ set -ex
 
 bun run build
 
-filepath=./test/test.coffee
+filepath=./test/test.js
 
 exec node \
   --trace-uncaught \
