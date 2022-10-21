@@ -1,4 +1,4 @@
-> ./jsext
+> ./jsext.js
 
 < resolve = (specifier, context, defaultResolve) =>
   return defaultResolve(
