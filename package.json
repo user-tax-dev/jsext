@@ -1,6 +1,6 @@
 {
   "name": "@iuser/node-loader",
-  "repository": "https://github.com/iuser-dev/nodejs-loader.git",
+  "repository": "https://github.com/user-tax-dev/node-loader.git",
   "type": "module",
   "license": "Apache-2.0",
   "files": [
