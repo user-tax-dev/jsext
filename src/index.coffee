@@ -1,7 +1,6 @@
 #!/usr/bin/env coffee
 
-import { readFile } from "fs/promises"
-import { readFileSync, existsSync } from "fs"
+import { existsSync, readFileSync } from "fs"
 import { createRequire } from "module"
 import { dirname, normalize, extname, join, resolve as resolvePath } from "path"
 import { cwd } from "process"
@@ -15,6 +14,8 @@ baseURL = pathToFileURL("#{cwd}/").href
 
 not_coffee = (specifier)=>
   specifier.slice(specifier.lastIndexOf(".") + 1) != 'coffee'
+
+JS_SUFFIX = '.js'
 
 export resolve = (specifier, context, defaultResolve) =>
   { parentURL = baseURL } = context
@@ -30,6 +31,8 @@ export resolve = (specifier, context, defaultResolve) =>
               if existsSync fp
                 specifier = fp
                 break $
+          if specifier.includes('/') and not specifier.endsWith(JS_SUFFIX)
+            specifier+=JS_SUFFIX
         return defaultResolve(specifier, context, defaultResolve)
 
   {
@@ -41,7 +44,7 @@ export resolve = (specifier, context, defaultResolve) =>
 export load = (url, context, defaultLoad)=>
   if not_coffee(url)
     return defaultLoad(url, context, defaultLoad)
-  format = await getPackageType(url)
+  format = getPackageType(url)
   if format == "commonjs"
     return { format }
 
@@ -62,11 +65,11 @@ getPackageType = (url) =>
   isFilePath = !!extname(url)
   dir = if isFilePath then dirname(fileURLToPath(url)) else url
   packagePath = resolvePath(dir, "package.json")
-  type = await readFile(packagePath, { encoding: "utf8" })
-    .then((filestring) => JSON.parse(filestring).type)
-    .catch (err) =>
-      if err?.code != "ENOENT"
-        console.error(err)
+  try
+    {type} = JSON.parse readFileSync(packagePath, { encoding: "utf8" })
+  catch err
+    if err?.code != "ENOENT"
+      console.error(err)
   if type
     return type
   return dir.length > 1 and getPackageType(resolvePath(dir, ".."))

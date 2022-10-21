@@ -8,8 +8,7 @@ bun run build
 
 filepath=./test/test.coffee
 
-exec node  --trace-warnings \
-  --es-module-specifier-resolution=node \
+exec node \
   --trace-uncaught \
   --experimental-fetch \
   --expose-gc \

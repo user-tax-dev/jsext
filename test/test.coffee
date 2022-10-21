@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
->
-  ./import:x
+> ./import:x
+  utax/split
 
 + a
 
