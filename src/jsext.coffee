@@ -2,8 +2,13 @@ JS_SUFFIX = '.js'
 
 BUILDIN = new Set ['fs','stream']
 
-export default (specifier)=>
+export default (specifier,cx)=>
   if specifier.includes ':'
+    return specifier
+
+  {parentURL} = cx
+
+  if parentURL.includes '/node_modules/'
     return specifier
 
   li = specifier.split '/'

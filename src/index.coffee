@@ -1,8 +1,8 @@
 > ./jsext.js
 
 < resolve = (specifier, context, defaultResolve) =>
-  return defaultResolve(
-    jsext(specifier), context, defaultResolve
+  defaultResolve(
+    jsext(specifier,context), context, defaultResolve
   )
 
 
