@@ -9,20 +9,19 @@ cd $_DIR
 
 set -ex
 
+git pull
+
 version=$(cat package.json | jq -r '.version')
 
-mdi
-
-add() {
-  git add -u
-  git commit -m v$version || true
-}
-
-git pull
+git add -u || true
+git commit -m. || true
 nr build
+cp package.dist.json lib/package.json
+cd lib
 npm set unsafe-perm true
-add
 npm version patch
-add
+cp package.json ../package.dist.json
+git add -u
+git commit -m v$version || true
 git push
 npm publish --access=public
