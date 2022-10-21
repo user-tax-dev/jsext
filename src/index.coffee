@@ -8,7 +8,8 @@ export resolve = (specifier, context, defaultResolve) =>
   else
     begin = 1
 
-  if specifier.indexOf('/',begin) > 0 and not specifier.endsWith(JS_SUFFIX)
+  pos = specifier.indexOf('/',begin)
+  if pos > 0 and not specifier[pos+1..].split('/').pop().includes('.')
     specifier+=JS_SUFFIX
   return defaultResolve(specifier, context, defaultResolve)
 
