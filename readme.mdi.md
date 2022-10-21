@@ -1,11 +1,3 @@
-nodejs loader for coffeescript
-
 ```
-ni -D @iuser/jsext
+ni -D @u6x/jsext
 ```
-
-> ./test.sh
-
-> ./test/test.coffee
-
-> ./test/import.coffee
