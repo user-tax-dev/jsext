@@ -11,11 +11,8 @@
     "build": "cep -o lib -c src"
   },
   "main": "lib/index.js",
-  "devDependencies": {
-    "coffeescript": "^2.7.0"
-  },
+  "devDependencies": { "utax": "^0.0.9" },
   "dependencies": {
-    "coffee_plus": "^0.0.41",
-    "utax": "^0.0.9"
+    "coffee_plus": "^0.0.41"
   }
 }

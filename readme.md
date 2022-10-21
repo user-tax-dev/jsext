@@ -1,4 +1,4 @@
-<!-- EDIT /Users/z/user/nodejs-loader/readme.md -->
+<!-- EDIT /Users/z/user/node-loader/readme.md -->
 
 nodejs loader for coffeescript
 
@@ -19,8 +19,7 @@ bun run build
 
 filepath=./test/test.coffee
 
-exec node  --trace-warnings \
-  --es-module-specifier-resolution=node \
+exec node \
   --trace-uncaught \
   --experimental-fetch \
   --expose-gc \
@@ -34,8 +33,8 @@ exec node  --trace-warnings \
 ```coffee
 #!/usr/bin/env coffee
 
->
-  ./import:x
+> ./import:x
+  utax/split
 
 + a
 
