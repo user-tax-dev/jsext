@@ -1,4 +1,7 @@
+> module > createRequire
+
 JS_SUFFIX = '.js'
+
 
 BUILDIN = new Set ['fs','stream','zx','assert']
 
@@ -23,6 +26,10 @@ export default (specifier,cx)=>
 
     pos = specifier.indexOf('/',begin)
     if pos > 0 and not li.pop().includes('.')
-      specifier += JS_SUFFIX
+      require = createRequire parentURL
+      try
+        require specifier
+      catch
+        specifier += JS_SUFFIX
 
   specifier
