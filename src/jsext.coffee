@@ -25,8 +25,6 @@ export default (specifier,cx)=>
 
     pos = specifier.indexOf('/',begin)
     if pos > 0 and not li.pop().includes('.')
-      specifierJs = specifier+JS_SUFFIX
-      if existsSync specifierJs
-        specifier = specifierJs
+      specifier += JS_SUFFIX
 
   specifier
