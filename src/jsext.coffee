@@ -1,3 +1,5 @@
+> fs > existsSync
+
 JS_SUFFIX = '.js'
 
 BUILDIN = new Set ['fs','stream','zx','assert']
@@ -23,6 +25,8 @@ export default (specifier,cx)=>
 
     pos = specifier.indexOf('/',begin)
     if pos > 0 and not li.pop().includes('.')
-      specifier+=JS_SUFFIX
+      specifierJs = specifier+JS_SUFFIX
+      if existsSync specifierJs
+        specifier = specifierJs
 
   specifier
