@@ -1,5 +1,3 @@
-> module > createRequire
-
 JS_SUFFIX = '.js'
 
 
@@ -26,10 +24,6 @@ export default (specifier,cx)=>
 
     pos = specifier.indexOf('/',begin)
     if pos > 0 and not li.pop().includes('.')
-      require = createRequire parentURL
-      try
-        require specifier
-      catch
-        specifier += JS_SUFFIX
+      specifier += JS_SUFFIX
 
   specifier
