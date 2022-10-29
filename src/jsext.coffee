@@ -1,5 +1,3 @@
-> fs > existsSync
-
 JS_SUFFIX = '.js'
 
 BUILDIN = new Set ['fs','stream','zx','assert']
