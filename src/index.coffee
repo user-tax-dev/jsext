@@ -1,10 +1,6 @@
 > ./jsext.js
 
-< resolve = (specifier, context, defaultResolve) =>
-  defaultResolve(
-    jsext(specifier,context), context, defaultResolve
-  )
-
+< resolve = jsext
 
 COMMONJS = {
   format: "commonjs",

@@ -13,4 +13,5 @@ exec node \
   --experimental-fetch \
   --expose-gc \
   --loader "./lib/index.js" \
+  --experimental-import-meta-resolve \
   --unhandled-rejections=strict $filepath
